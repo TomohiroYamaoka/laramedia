@@ -11,4 +11,4 @@
 |
 */
 
-Route::get('/', 'LoginController@index');
+Route::get('/', 'MainController@index')->name('main.index');;
