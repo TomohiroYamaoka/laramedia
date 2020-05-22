@@ -17,34 +17,41 @@
             </div>
         </section>
         <!-- ----------x----------Site Title --------x-------- -->
-
         <!-- ---------------------- Site Content -------------------------->
-
         <section class="container">
             <div class="site-content">
-                <div class="posts">
+    　          <div class="posts">
+    　　　　　　　<!--MainControllerでの$articlesを受け取る-->
+    　　　　　　　 @foreach($articles as $article)
                     <div class="post-content" data-aos="zoom-in" data-aos-delay="200">
                         <div class="post-image">
                             <div>
-                                <!--投稿した画面をアップロードを--->
+                                <!--投稿した画像--->
                                 <img src="./assets/index.jpg" class="img" alt="blog1">
                             </div>
                             <div class="post-info flex-row">
-                                <span><i class="fas fa-user text-gray"></i>&nbsp;&nbsp;Admin</span>
-                                <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 14, 2019</span>
+                            　　 <!--作成者-->
+                                <span><i class="fas fa-user text-gray"></i>&nbsp;&nbsp;
+                                  {{ $article->user->name}}
+                                </span>
+                                <!--日付-->
+                                <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;
+                                  {{ $article->created_at->format('Y/m/d H:i') }}
+                                </span>
                             </div>
                         </div>
-                        
-                        <!--コンテンツ1-->
-                        <div class="post-title">
-                            <a href="#">Why should boys have all the fun? it's the women who are making india an
-                                alcohol-loving contry</a>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque voluptas deserunt beatae
-                            </p>
+                        　　　　<!--コンテンツ1-->
+                        　　　<div class="post-title">
+                        　　 　<!--ブログのタイトル-->　　
+                           　 <a href="#">{{ $article->title }}</a>
+                           　 <!--ブログの本文-->
+                            　<p>{{$article->body}}</p>
+                            　<!--ブログに付属しているボタン-->
                             <button class="btn post-btn">Read More &nbsp; <i class="fas fa-arrow-right"></i></button>
                         </div>
                     </div>
-                    <hr>
+                ＠endforeach
+
                     <div class="post-content" data-aos="zoom-in" data-aos-delay="200">
                         <div class="post-image">
                             <div>
