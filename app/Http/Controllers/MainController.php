@@ -15,7 +15,7 @@ class MainController extends Controller
         $articles = Article::all()->sortByDesc('created_at');
         
         //views/main/index.blade.phpのindex処理を実行。
-        return view('articles.index', ['articles' => $articles]);
+        return view('articles.register', ['articles' => $articles]);
     
     }
 }

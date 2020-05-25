@@ -10,5 +10,6 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+/*認証関連のルーティングの雛形を呼び出す。*/ 
+Auth::routes();
 Route::get('/', 'MainController@index')->name('main.index');;
