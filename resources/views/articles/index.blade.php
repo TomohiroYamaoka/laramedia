@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
 </head>    
 
-
+<!------------------------------------------------------------------>
 <body>
 @include('nav')
 <main>
@@ -26,6 +26,7 @@
     <section class="container">
             <div class="site-content">
     　          <div class="posts">
+    　　　　　　　<!---------------コンテンツ------------------------>
                     <div class="post-content" data-aos="zoom-in" data-aos-delay="200">
                         <div class="post-image">
                             <div>
@@ -33,6 +34,7 @@
                                 <img src="./assets/index.jpg" class="img" alt="blog1">
                             </div>
                             <div class="post-info flex-row">
+                            <!---->
                             @foreach($articles as $article)
                             　　 <!--作成者-->
                                 <span><i class="fas fa-user text-gray"></i>&nbsp;&nbsp;
@@ -42,7 +44,6 @@
                                 <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;
                                 {{ $article->created_at->format('Y/m/d H:i') }} 
                                 </span>
-                           
                             </div>
                         </div>
                         　　　　<!--コンテンツ1-->
@@ -57,6 +58,7 @@
                     </div>
                 </div>
                 
+                <!------------------コンテンツ--------------------->
                 <div class="post-content" data-aos="zoom-in" data-aos-delay="200">
                         <div class="post-image">
                             <div>
@@ -76,6 +78,7 @@
                             <button class="btn post-btn">Read More &nbsp; <i class="fas fa-arrow-right"></i></button>
                         </div>
                     </div>
+                <!------------------コンテンツ--------------------->
                     <hr>
                     <div class="post-content" data-aos="zoom-in" data-aos-delay="200">
                         <div class="post-image">
@@ -111,6 +114,7 @@
                         </div>
                     </div>
 
+                    <!-----------ページ遷移------------------->
                     <div class="pagination flex-row">
                         <a href="#"><i class="fas fa-chevron-left"></i></a>
                         <a href="#" class="pages">1</a>
@@ -121,6 +125,7 @@
                 </div>
 
 
+                <!--------サイドバーを作成する---------------->
                 <aside class="sidebar">
                     <div class="category">
                         <h2>Category</h2>
@@ -144,9 +149,12 @@
                     </div>
                   </div>
                 </aside>
+            　<!-------------------------------------------------->
             </div>
         </section>
     </main>
+
+    <!-------------------------------------------------->
     <footer class="footer">
         <div class="rights flex-row">
             <h4 class="text-gray">
