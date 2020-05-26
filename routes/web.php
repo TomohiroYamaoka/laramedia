@@ -12,4 +12,4 @@
 */
 /*認証関連のルーティングの雛形を呼び出す。*/ 
 Auth::routes();
-Route::get('/', 'MainController@index')->name('main.index');;
+Route::get('/', 'MainController@index')->name('articles.index');;

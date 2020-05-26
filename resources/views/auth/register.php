@@ -13,7 +13,8 @@
         　 ＠csrf
         　　<p>ユーザー名</p>
            <input type="name" name="" placeholder="Enter your name">
-           <p>Email Adress</p>
+           <p>Eメールアドレス</p>
+           <small>英数字3〜16文字(登録後の変更はできません)</small>
            <input type="text" name="" placeholder="Enter your Email adress">
            <p>パスワード</p>
            <input type="password" name="" placeholder="Enter Password">
