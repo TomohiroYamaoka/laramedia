@@ -21,9 +21,12 @@
                     <li class="nav-link">
                         <a href="#">一覧</a>
                     </li>
-                    <li class="nav-link">
-                        <a href="#">Logout</a>
+                    <li cs="nav-link">
+                        <button form="logout-button" type="submit">ログアウト</button>
                     </li>
+                    <form id="logout-button" method="POST" action="{{ route('logout') }}"> 
+                        @csrf
+                    </form>
                 </ul>
             </div>
         </div>
