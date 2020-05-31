@@ -10,7 +10,7 @@
     <img src="avatar.png" class="avatar">    
        <h1>Login Form</h1>
        <!--post処理記事一覧のページに-->
-        <form　method="POST" action="{{ route('index') }}">
+        <form　method="POST" action="{{ route('login') }}">
            <p>Username</p>
            <input type="text" name="" placeholder="Enter Username">
            <p>Password</p>
