@@ -19,11 +19,12 @@
                         <a href="#">About</a>
                     </li>
                     <li class="nav-link">
-                        <a href="#">一覧</a>
+                        <a href="{{ route('articles.create') }}">投稿をする</a>
                     </li>
                     <li cs="nav-link">
                         <button form="logout-button" type="submit">ログアウト</button>
                     </li>
+                    <!--完了済-->
                     <form id="logout-button" method="POST" action="{{ route('logout') }}"> 
                         @csrf
                     </form>
