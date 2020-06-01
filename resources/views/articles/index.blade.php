@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/styles.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
 </head>    
 
 <!------------------------------------------------------------------>
@@ -19,100 +20,54 @@
         <div class="site-background" data-aos="fade-up" data-aos-delay="100">
             <h3>VENECT</h3>
             <h1>INTERN WEBMEDIA</h1>
-            <button class="btn">投稿を見る</button>
         </div>
     </section>
     
     <section class="container">
             <div class="site-content">
-    　          <div class="posts">
-    　　　　　　　<!---------------コンテンツ------------------------>
-                    <div class="post-content" data-aos="zoom-in" data-aos-delay="200">
-                        <div class="post-image">
-                            <div>
-                                <!--投稿した画像--->
-                                <img src="./assets/index.jpg" class="img" alt="blog1">
-                            </div>
-                            <div class="post-info flex-row">
-                            <!---->
-                            @foreach($articles as $article)
-                            　　 <!--作成者-->
-                                <span><i class="fas fa-user text-gray"></i>&nbsp;&nbsp;
-                                {{ $article->user->name }} 
-                                </span> 
-                                <!--日付-->
-                                <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;
-                                {{ $article->created_at->format('Y/m/d H:i') }} 
-                                </span>
-                            </div>
-                        </div>
-                        　　　　<!--コンテンツ1-->
-                        　　　<div class="post-title">
-                        　　 　<!--ブログのタイトル-->　　
-                           　 <a href="#">{{ $article->title }}</a>
-                           　 <!--ブログの本文-->
-                            　<p>{!! nl2br(e( $article->body )) !!}</p>
-                             @endforeach 
-                            　<!--ブログに付属しているボタン-->
-                             <button class="btn post-btn">Read More &nbsp; <i class="fas fa-arrow-right"></i></button>
-                    </div>
-                </div>
-                
-                <!------------------コンテンツ--------------------->
-                <div class="post-content" data-aos="zoom-in" data-aos-delay="200">
-                        <div class="post-image">
-                            <div>
-                                <img src="./assets/pic1.jpg" class="img" alt="blog1">
-                            </div>
-                            <div class="post-info flex-row">
-                                <span><i class="fas fa-user text-gray"></i>&nbsp;&nbsp;Admin</span>
-                                <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 16, 2019</span>
-                            </div>
-                        </div>
-                        
-                        <!--コンテンツ----->
-                        <div class="post-title">
-                            <a href="#">Why should boys have all the fun? it's the women who are making india an
-                                alcohol-loving contry</a>
-                            <p>Lorem  fugit. Eligendi quidem ipsam ducimus minus magni</p>
-                            <button class="btn post-btn">Read More &nbsp; <i class="fas fa-arrow-right"></i></button>
-                        </div>
-                    </div>
-                <!------------------コンテンツ--------------------->
-                    <hr>
-                    <div class="post-content" data-aos="zoom-in" data-aos-delay="200">
-                        <div class="post-image">
-                            <div>
-                                <img src="./assets/pic2.jpg" class="img" alt="blog1">
-                            </div>
-                            <div class="post-info flex-row">
-                                <span><i class="fas fa-user text-gray"></i>&nbsp;&nbsp;Admin</span>
-                                <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 19, 2019</span>
-                            </div>
-                        </div>
-                        <div class="post-title">
-                            <a href="#">New data recording system to better analyse road accidents</a>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque voluptas deserunt beatae</p>
-                            <button class="btn post-btn">Read More &nbsp; <i class="fas fa-arrow-right"></i></button>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="post-content" data-aos="zoom-in" data-aos-delay="200">
-                        <div class="post-image">
-                            <div>
-                                <img src="./assets/pic3.jpg" class="img" alt="blog1">
-                            </div>
-                            <div class="post-info flex-row">
-                                <span><i class="fas fa-user text-gray"></i>&nbsp;&nbsp;Admin</span>
-                                <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 21, 2019</span>
-                            </div>
-                        </div>
-                        <div class="post-title">
-                            <a href="#">New data recording system to better analyse road accidents</a>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque voluptas deserunt beatae</p>
-                            <button class="btn post-btn">Read More &nbsp; <i class="fas fa-arrow-right"></i></button>
-                        </div>
-                    </div>
+              　　<!---------------Card content ------------------>
+              @foreach($articles as $article)　
+                <div class="card card-cascade narrower">
+                　　<!-- Card image -->
+                　　　　<div class="post-content" data-aos="zoom-in" data-aos-delay="200">
+                　　　　　　<img class="card-img-top" src="./assets/index.jpg" alt="Card image cap">
+                　　　　　　　<a><div class="mask rgba-white-slight"></div></a>
+                　　　　</div>
+                　　　　　<!-- Card content -->
+                　　　　<div class="card-body card-body-cascade">
+                　　　　　<!-- Label -->
+                　　　　　　<h5 class="pink-text pb-2 pt-1"><i class="fas fa-utensils"></i>{{ $article->user->name }} {{ $article->created_at->format('Y/m/d H:i') }} </h5>
+                　　　　　　<!-- Title -->
+                　　　　　　　<h4 class="font-weight-bold card-title">{{ $article->title }}</h4>
+                　　　　　　　　　<!-- Text -->
+                　　　　　　　　　　<p class="card-text">{!! nl2br(e( $article->body )) !!}</p>
+                　　　　　　　　　　<!-- Button -->
+                　　　　　　　　　　　　<a class="btn btn-unique">Read more</a>
+                　　　　　　　</div>
+                　　　　　</div>
+                @endforeach 
+　　　　　　　　　　　<!---------------- content ----------------->
+                <!---------------Card content ------------------>
+                <div class="card card-cascade narrower">
+                　　<!-- Card image -->
+                　　　　<div class="post-content" data-aos="zoom-in" data-aos-delay="200">
+                　　　　　　<img class="card-img-top" src="./assets/index.jpg" alt="Card image cap">
+                　　　　　　　<a><div class="mask rgba-white-slight"></div></a>
+                　　　　</div>
+                　<!-- Card content -->
+                　　　　<div class="card-body card-body-cascade">
+                　　　　　<!-- Label -->
+                　　　　　　<h5 class="pink-text pb-2 pt-1"><i class="fas fa-utensils"></i> Culinary</h5>
+                　　　　　　<!-- Title -->
+                　　　　　　　<h4 class="font-weight-bold card-title">Cheat day inspirations</h4>
+                　　　　　　　　　<!-- Text -->
+                　　　　　　　　　　<p class="card-text">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipitlaboriosam, nisi ut aliquid ex ea commodi.</p>
+                　　　　　　　　　　<!-- Button -->
+                　　　　　　　　　　　　<a class="btn btn-unique">Button</a>
+                　　　　</div>
+                　</div>
+　　　　　　　　　　　<!---------------- content ----------------->
+
 
                     <!-----------ページ遷移------------------->
                     <div class="pagination flex-row">
@@ -123,7 +78,6 @@
                         <a href="#"><i class="fas fa-chevron-right"></i></a>
                     </div>
                 </div>
-
 
                 <!--------サイドバーを作成する---------------->
                 <aside class="sidebar">
@@ -158,12 +112,18 @@
     <footer class="footer">
         <div class="rights flex-row">
             <h4 class="text-gray">
-                Copyright ©2019 All rights reserved | made by
+                Copyright ©2019 All rights reserved | made by TomohiroYamaoka
             </h4>
         </div>
     </footer>
     <!-- Jqueryをインポート -->
     <script src="./js/jquery3.5.1.min.js"></script>
     <!-- Javascript fileをインポートする -->
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.11/js/mdb.min.js"></script>
     </body>
 </html>
