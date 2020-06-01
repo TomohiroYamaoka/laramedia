@@ -12,6 +12,6 @@
 */
 /*認証関連のルーティングの雛形を呼び出す。*/ 
 Auth::routes();
-Route::get('/', 'MainController@index');
+Route::get('/', 'MainController@index')->name('articles.index');;
 /*記事投稿画面のルーティング*/
-Route::resource('/articles', 'MainController');
+Route::resource('/articles', 'MainController')->except(['index'])->middleware('auth');;
