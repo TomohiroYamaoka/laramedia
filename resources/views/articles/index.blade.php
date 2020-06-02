@@ -29,8 +29,8 @@
                 　　　　　　　　　<!-- Text -->
                 　　　　　　　　　　<p class="card-text">{!! nl2br(e( $article->body )) !!}</p>
                 　　　　　　　　　　<!-- Button -->
-                　　　　　　　　　　　　<a class="btn btn-unique">Read more</a>
-                　　　　　　　</div>
+                　　　　　　　　　　　<button type="button" class="btn btn-outline-secondary btn-rounded waves-effect">Read More</button>
+                            　</div>
                 　　　　　</div>
                 　　@endforeach 
                 <!---------------Card content ------------------>

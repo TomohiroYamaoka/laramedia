@@ -44,11 +44,8 @@ ul{
 
 h1{
     font-family: var(--Lexend);
-    font-size: 2.5rem;
-}
-
-h2{
-    font-family: var(--Lexend);
+    font-size: 10px;
+    
 }
 
 h3{
@@ -88,7 +85,7 @@ main .site-title{
     background: url('../assets/web.jpg');
     background-size: cover;
     height: 80vh;
-    filter: brightness(80%);/*フィルターをかける*/
+    filter: brightness(90%);/*フィルターをかける*/
     display: flex;
     justify-content: center;
 }
@@ -96,22 +93,12 @@ main .site-title{
 main .site-title .site-background{
     padding-top: 10rem;
     text-align: center;
-    color: white;
+    color:white;
 }
 
 main .site-title h1, h3{
     margin: .5rem;
-}
-
-main .site-title .btn{
-    margin: 1.8rem;
-    background: var(--sky);
-}
-
-main .site-title .btn:hover{
-    background: transparent;
-    border: 1px solid var(--white);
-    color: var(--white);
+    font-size: 70px;
 }
 
 /* --------x------ Site title --------x------- */
