@@ -1,19 +1,7 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <!-- レスポンシブに対応-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>インターンwebmedia</title>
-    <!-- style.css -->
-    <link rel="stylesheet" href="css/styles.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-</head>    
+@extends('app')
 
+@section('content')
 <!------------------------------------------------------------------>
-<body>
 @include('nav')
 <main>
     <section class="site-title">
@@ -22,10 +10,9 @@
             <h1>INTERN WEBMEDIA</h1>
         </div>
     </section>
-    
+    <!---------------Card content ------------------>
     <section class="container">
             <div class="site-content">
-              　　<!---------------Card content ------------------>
               @foreach($articles as $article)　
                 <div class="card card-cascade narrower">
                 　　<!-- Card image -->
@@ -45,8 +32,7 @@
                 　　　　　　　　　　　　<a class="btn btn-unique">Read more</a>
                 　　　　　　　</div>
                 　　　　　</div>
-                @endforeach 
-　　　　　　　　　　　<!---------------- content ----------------->
+                　　@endforeach 
                 <!---------------Card content ------------------>
                 <div class="card card-cascade narrower">
                 　　<!-- Card image -->
@@ -67,8 +53,6 @@
                 　　　　</div>
                 　</div>
 　　　　　　　　　　　<!---------------- content ----------------->
-
-
                     <!-----------ページ遷移------------------->
                     <div class="pagination flex-row">
                         <a href="#"><i class="fas fa-chevron-left"></i></a>
@@ -78,36 +62,10 @@
                         <a href="#"><i class="fas fa-chevron-right"></i></a>
                     </div>
                 </div>
-
-                <!--------サイドバーを作成する---------------->
-                <aside class="sidebar">
-                    <div class="category">
-                        <h2>Category</h2>
-                        <ul class="category-list">
-                            <li class="list-items" data-aos="fade-left" data-aos-delay="100">
-                                <a href="#">Software</a>
-                            </li>
-                            <li class="list-items" data-aos="fade-left" data-aos-delay="200">
-                                <a href="#">Techonlogy</a>
-                            </li>
-                            <li class="list-items" data-aos="fade-left" data-aos-delay="300">
-                                <a href="#">Lifestyle</a>
-                            </li>
-                            <li class="list-items" data-aos="fade-left" data-aos-delay="400">
-                                <a href="#">Shopping</a>
-                            </li>
-                            <li class="list-items" data-aos="fade-left" data-aos-delay="500">
-                                <a href="#">Food</a>
-                            </li>
-                        </ul>
-                    </div>
-                  </div>
-                </aside>
             　<!-------------------------------------------------->
             </div>
         </section>
     </main>
-
     <!-------------------------------------------------->
     <footer class="footer">
         <div class="rights flex-row">
@@ -116,14 +74,4 @@
             </h4>
         </div>
     </footer>
-    <!-- Jqueryをインポート -->
-    <script src="./js/jquery3.5.1.min.js"></script>
-    <!-- Javascript fileをインポートする -->
-    <!-- Bootstrap tooltips -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
-    <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <!-- MDB core JavaScript -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.11/js/mdb.min.js"></script>
-    </body>
-</html>
+@endsection
