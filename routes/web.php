@@ -14,4 +14,5 @@
 Auth::routes();
 Route::get('/', 'MainController@index')->name('articles.index');;
 /*記事投稿画面のルーティング*/
-Route::resource('/articles', 'MainController')->except(['index'])->middleware('auth');;
+Route::resource('/articles', 'MainController')->except(['index', 'show'])->middleware('auth');
+Route::resource('/articles', 'MainController')->only(['show']);
