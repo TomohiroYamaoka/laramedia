@@ -67,7 +67,7 @@
           </div>
           <!-- modal -->
         @endif
-        {{-- ここまで追加 --}}
+        
                 　　　　　<!-- Card content -->
                 　　　　<div class="card-body card-body-cascade">
                 　　　　　<!-- Label -->
